@@ -8,12 +8,21 @@ use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
+    /**
+     * Run the database seeds.
+     */
     public function run(): void
     {
-        User::create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-            'password' => Hash::make('password'), // ログイン用に「password」としておく
-        ]);
+        // 管理者ユーザーを作成（存在しない場合のみ）
+        if (!User::where('email', 'admin@mail.com')->exists()) {
+            User::create([
+                'name' => 'Admin',
+                'email' => 'admin@mail.com',
+                'password' => Hash::make('admin12345'), // ここでHash::make()を使うのが重要
+            ]);
+        }
+
+        // もし他にもダミーユーザーが欲しい場合は、factoryを使うなどして追加
+        // User::factory()->count(5)->create(); // 例: ダミーユーザーを5人追加
     }
 }
