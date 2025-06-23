@@ -13,7 +13,12 @@
     <title>{{ config('app.name', 'Blog') }} | @yield('title')</title>
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
+
+        {{-- Updated BS and JS --}}
+    <link rel="stylesheet" href="{{ asset('css/app-B_jciIra.css') }}">
+    <script src="{{ asset('js/app-pd4cR8cG.js') }}"></script>
+    
 </head>
 <body>
     <div id="app">

@@ -13,16 +13,13 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        // 管理者ユーザーを作成（存在しない場合のみ）
         if (!User::where('email', 'admin@mail.com')->exists()) {
             User::create([
                 'name' => 'Admin',
                 'email' => 'admin@mail.com',
-                'password' => Hash::make('admin12345'), // ここでHash::make()を使うのが重要
+                'password' => Hash::make('admin12345'),
             ]);
         }
 
-        // もし他にもダミーユーザーが欲しい場合は、factoryを使うなどして追加
-        // User::factory()->count(5)->create(); // 例: ダミーユーザーを5人追加
     }
 }
