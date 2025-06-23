@@ -10,14 +10,20 @@
     {{-- Fontawesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+        {{-- Laravel MixでビルドされたCSSを参照 --}}
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
     <title>{{ config('app.name', 'Blog') }} | @yield('title')</title>
 
     <!-- Scripts -->
     {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
 
         {{-- Updated BS and JS --}}
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <script src="{{ asset('js/app.js') }}"></script>
+        {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <script src="{{ asset('js/app.js') }}"></script> --}}
+
+
+
 
 </head>
 <body>
@@ -107,6 +113,7 @@
             </div>
         </main>
     </div>
-
+        {{-- Laravel MixでビルドされたJSを参照 --}}
+        <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
