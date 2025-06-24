@@ -1,8 +1,19 @@
-// Fonts
-@import url('https://fonts.bunny.net/css?family=Nunito');
+    // Bootstrap をインポート
+    @import 'bootstrap/scss/bootstrap';
 
-// Variables
-@import 'variables';
+    // Tailwind CSS のディレクティブ
+    // Tailwindの基本スタイル、コンポーネント、ユーティリティをここでインポート
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
 
-// Bootstrap
-@import 'bootstrap/scss/bootstrap';
+    // ここにあなたのカスタムCSSを追加できます
+    // 例: .custom-hover-button クラスのスタイル
+    .custom-hover-button {
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+    .custom-hover-button:hover {
+        background-color: darkblue; /* ホバー時の背景色 */
+        color: white; /* ホバー時の文字色 */
+    }
+    
